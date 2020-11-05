@@ -41,7 +41,7 @@ public class LoginRegister : MonoBehaviour
             },
             error => {
                 Debug.Log(error.ErrorMessage);
-                SetDisplayText("There Was An Error. Please Try Again", Color.red);
+                SetDisplayText("Something went wrong: try a longer password", Color.red);
             }
         );
         
@@ -62,8 +62,8 @@ public class LoginRegister : MonoBehaviour
                 if (onLoggedIn != null)
                     onLoggedIn.Invoke();
                 playFabId = result.PlayFabId;
-            },     
-            error => Debug.Log(error.ErrorMessage)
+            },
+            error => SetDisplayText("Incorrect Login", Color.red)
         );
 
     }

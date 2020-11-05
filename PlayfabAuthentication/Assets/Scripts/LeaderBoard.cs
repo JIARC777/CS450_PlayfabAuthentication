@@ -52,8 +52,6 @@ public class LeaderBoard : MonoBehaviour
 
         PlayFabClientAPI.ExecuteCloudScript(request,
             result => {
-                Debug.Log(result.Error)
-                Debug.Log(result.FunctionResult);
                 DisplayLeaderboard();
               },
             error => Debug.Log(error.ErrorMessage)
